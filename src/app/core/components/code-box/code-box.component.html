@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="flex-container">
+    <h1>{{ titre }}</h1>
+    <div class="button-container">
+      <button (click)="copyToClipboard()" class="copy-button">{{textButton}}</button>
+    </div>
+  </div>
+
+  <div class="code-container">
+    <pre><code>{{ code }}</code></pre>
+  </div>
+
+  <p>{{ description }}</p>
+</div>

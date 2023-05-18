@@ -1,0 +1,29 @@
+<div class="big-container">
+
+
+<div class="search-container">
+  <input type="text" class="search-input" placeholder="Rechercher...">
+  <button class="search-button">
+    <i class="fa fa-search"></i>
+  </button>
+</div>
+
+<div class="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+  <h1 class="text-3xl font-bold mb-4">Welcome to Angular CLI Essentials!</h1>
+  <p class="text-lg text-gray-700 mb-8">Angular CLI (Command Line Interface) is a vital tool for developing Angular applications with speed and efficiency. It provides a seamless experience by automating common tasks and offering powerful command-line utilities.</p>
+  <p class="text-lg text-gray-700 mb-8">In this concise guide, we'll walk you through the essential features of Angular CLI. Whether you're a beginner or an experienced developer, you'll gain insights into project setup, code generation, testing, optimization, and more.</p>
+  <p class="text-lg text-gray-700 mb-8">By leveraging Angular CLI, you can streamline your development workflow, increase productivity, and build high-quality Angular applications with ease. Let's dive in and unlock the full potential of Angular CLI!</p>
+  <div class="container">
+    <div class="field">
+      <div class="scroll" (click)="scrollToTab()"></div>
+    </div>
+
+  </div>
+</div>
+
+
+<div class="code-box-container" id="tab">
+  <code-box *ngFor="let block of tableau" [titre]="block.titre" [code]="block.code" [description]="block.description"></code-box>
+</div>
+</div>
+
