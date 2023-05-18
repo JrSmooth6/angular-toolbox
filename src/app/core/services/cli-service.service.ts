@@ -86,11 +86,17 @@ export class CliServiceService {
       "code": "ng generate library name-of-the-library",
       "description": "The `ng generate library name-of-the-library` command is used to create a new Angular library. Angular libraries are reusable code packages that can be shared across multiple projects. When you run this command, Angular CLI generates the necessary files and configuration to create a library. This includes a library root module, a public API file, and a builder configuration. Creating a library allows you to modularize and package common code, components, or services, making it easier to share and maintain code across different projects or teams."
     }
-
-
-
-
-
   ]
+  }
+  getTitle(){
+    return [{
+      "title" : "Welcome to Angular CLI Essentials!",
+      "texte" : [
+        "Angular CLI (Command Line Interface) is a vital tool for developing Angular applications with speed and efficiency. It provides a seamless experience by automating common tasks andoffering powerful command-line utilities.",
+        "In this concise guide, we'll walk you through the essential features of Angular CLI. Whether you're a beginner or an experienced developer, you'll gain insights into project setup,code generation, testing, optimization, and more.",
+        "By leveraging Angular CLI, you can streamline your development workflow, increase productivity, and build high-quality Angular applications with ease. Let's dive in and unlock the full potential of Angular CLI!",
+      ]
+    }
+    ]
   }
 }

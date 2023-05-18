@@ -1,0 +1,176 @@
+{
+    "title":{
+        "en": "Angular CLI Essentials",
+        "fr": "Les essentiels d'Angular CLI"
+    },
+    "texte":{
+        "en": [
+            "Angular CLI (Command Line Interface) is a vital tool for developing Angular applications with speed and efficiency. It provides a seamless experience by automating common tasks and offering powerful command-line utilities.",
+            "In this concise guide, we'll walk you through the essential features of Angular CLI. Whether you're a beginner or an experienced developer, you'll gain insights into project setup, code generation, testing, optimization, and more.",
+            "By leveraging Angular CLI, you can streamline your development workflow, increase productivity, and build high-quality Angular applications with ease. Let's dive in and unlock the full potential of Angular CLI!"
+        ],
+        "fr": [
+            "Angular CLI (Interface en ligne de commande) est un outil essentiel pour développer des applications Angular rapidement et efficacement. Il offre une expérience fluide en automatisant les tâches courantes et en proposant des utilitaires puissants en ligne de commande.",
+            "Dans ce guide concis, nous vous guiderons à travers les fonctionnalités essentielles d'Angular CLI. Que vous soyez débutant ou développeur expérimenté, vous obtiendrez des informations sur la configuration du projet, la génération de code, les tests, l'optimisation et bien plus encore.",
+            "En utilisant Angular CLI, vous pouvez rationaliser votre flux de travail de développement, augmenter votre productivité et créer facilement des applications Angular de haute qualité. Plongeons-y et exploitons pleinement le potentiel d'Angular CLI !"
+        ]
+    },
+    "table": {
+        "en" : [
+            {
+                "title": "Install Angular CLI",
+                "code": "npm install -g @angular/cli",
+                "description": "The npm install -g @angular/cli command is used to globally install the Angular CLI..."
+            },
+            {
+                "title": "Create project",
+                "code": "ng new name-of-the-project",
+                "description": "The ng new name-of-the-project command is used to create a new Angular project..."
+            },
+            {
+                "title": "Create a new module",
+                "code": "ng g m name-of-the-middle",
+                "description": "The ng g m name-of-the-middle command is used to generate a new Angular module..."
+            },
+            {
+                "title": "Serve the application",
+                "code": "ng serve",
+                "description": "The ng serve command is used to build and serve your Angular application locally..."
+            },
+            {
+                "title": "Build the application",
+                "code": "ng build",
+                "description": "The ng build command is used to build your Angular application for production..."
+            },
+            {
+                "title": "Generate a new component",
+                "code": "ng g c name-of-the-component",
+                "description": "The ng g c name-of-the-component command is used to generate a new Angular component..."
+            },
+            {
+                "title": "Run unit tests",
+                "code": "ng test",
+                "description": "The ng test command is used to run unit tests for your Angular application..."
+            },
+            {
+                "title": "Run end-to-end tests",
+                "code": "ng e2e",
+                "description": "The ng e2e command is used to run end-to-end (e2e) tests for your Angular application..."
+            },
+            {
+                "title": "Update Angular dependencies",
+                "code": "ng update",
+                "description": "The ng update command is used to update the Angular dependencies in your project..."
+            },
+            {
+                "title": "Generate a new service",
+                "code": "ng g s name-of-the-service",
+                "description": "The ng g s name-of-the-service command is used to generate a new Angular service..."
+            },
+            {
+                "title": "Lint the code",
+                "code": "ng lint",
+                "description": "The ng lint command is used to run the linting process on your Angular project's code..."
+            },
+            {
+                "title": "Generate a new directive",
+                "code": "ng g d name-of-the-directive",
+                "description": "The ng g d name-of-the-directive command is used to generate a new Angular directive..."
+            },
+            {
+                "title": "Run the application in a production-like environment",
+                "code": "ng serve --prod",
+                "description": "The ng serve --prod command is used to serve the Angular application in a production-like environment..."
+            },
+            {
+                "title": "Create a new component with a specific file extension",
+                "code": "ng g c name-of-the-component --skip-tests --style=scss",
+                "description": "The ng g c name-of-the-component --skip-tests --style=scss command is used to generate a new Angular component with specific options..."
+            },
+            {
+                "title": "Create a new Angular library",
+                "code": "ng generate library name-of-the-library",
+                "description": "The ng generate library name-of-the-library command is used to create a new Angular library..."
+            }  
+        ],
+        "fr" : [
+            {
+                "title": "Installer Angular CLI",
+                "code": "npm install -g @angular/cli",
+                "description": "La commande npm install -g @angular/cli est utilisée pour installer globalement l'Angular CLI..."
+            },
+            {
+                "title": "Créer un projet",
+                "code": "ng new nom-du-projet",
+                "description": "La commande ng new nom-du-projet est utilisée pour créer un nouveau projet Angular..."
+            },
+            {
+                "title": "Créer un nouveau module",
+                "code": "ng g m nom-du-module",
+                "description": "La commande ng g m nom-du-module est utilisée pour générer un nouveau module Angular..."
+            },
+            {
+                "title": "Lancer l'application",
+                "code": "ng serve",
+                "description": "La commande ng serve est utilisée pour construire et exécuter votre application Angular en local..."
+            },
+            {
+                "title": "Compiler l'application",
+                "code": "ng build",
+                "description": "La commande ng build est utilisée pour compiler votre application Angular pour la production..."
+            },
+            {
+                "title": "Générer un nouveau composant",
+                "code": "ng g c nom-du-composant",
+                "description": "La commande ng g c nom-du-composant est utilisée pour générer un nouveau composant Angular..."
+            },
+            {
+                "title": "Exécuter les tests unitaires",
+                "code": "ng test",
+                "description": "La commande ng test est utilisée pour exécuter les tests unitaires de votre application Angular..."
+            },
+            {
+                "title": "Exécuter les tests end-to-end",
+                "code": "ng e2e",
+                "description": "La commande ng e2e est utilisée pour exécuter les tests end-to-end (e2e) de votre application Angular..."
+            },
+            {
+                "title": "Mettre à jour les dépendances Angular",
+                "code": "ng update",
+                "description": "La commande ng update est utilisée pour mettre à jour les dépendances Angular de votre projet..."
+            },
+            {
+                "title": "Générer un nouveau service",
+                "code": "ng g s nom-du-service",
+                "description": "La commande ng g s nom-du-service est utilisée pour générer un nouveau service Angular..."
+            },
+            {
+                "title": "Linter le code",
+                "code": "ng lint",
+                "description": "La commande ng lint est utilisée pour exécuter le processus de linting sur le code de votre projet Angular..."
+            },
+            {
+                "title": "Générer une nouvelle directive",
+                "code": "ng g d nom-de-la-directive",
+                "description": "La commande ng g d nom-de-la-directive est utilisée pour générer une nouvelle directive Angular..."
+            },
+            {
+                "title": "Exécuter l'application dans un environnement similaire à la production",
+                "code": "ng serve --prod",
+                "description": "La commande ng serve --prod est utilisée pour exécuter l'application Angular dans un environnement similaire à la production..."
+            },
+            {
+                "title": "Créer un nouveau composant avec une extension de fichier spécifique",
+                "code": "ng g c nom-du-composant --skip-tests --style=scss",
+                "description": "La commande ng g c nom-du-composant --skip-tests --style=scss est utilisée pour générer un nouveau composant Angular avec des options spécifiques..."
+            },
+            {
+                "title": "Créer une nouvelle bibliothèque Angular",
+                "code": "ng generate library nom-de-la-bibliothèque",
+                "description": "La commande ng generate library nom-de-la-bibliothèque est utilisée pour créer une nouvelle bibliothèque Angular..."
+            }
+        ]
+    }
+}
+    
+    
