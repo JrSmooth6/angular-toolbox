@@ -1,0 +1,271 @@
+{
+    "title" : 
+    {
+        "en" : "Angular Pipes: Simplifying Data Transformation and Presentation",
+        "fr" : "Angular Pipes : Simplification de la transformation et de la présentation des données"
+    },
+    "texte" : {
+        "en" :
+        [
+            "Welcome to the Angular Pipes page of Angular Toolbox! In this section, we will explore one of the powerful features of Angular: Pipes. Angular Pipes provide a convenient and efficient way to transform and format data for display in your Angular applications. By applying various built-in or custom pipes, you can modify data on-the-fly, perform filtering, sorting, and formatting operations, ultimately enhancing the user experience.",
+            "Overview of Angular Pipes:",
+            "In Angular, pipes act as filters that take in raw data as input and output transformed data. They can be used in templates to modify the appearance, formatting, or behavior of data without changing the underlying values. Pipes are designed to be simple and reusable, promoting code maintainability and reducing repetition."
+        ],
+        "fr" :[
+            "Bienvenue sur la page Angular Pipes d'Angular Toolbox! Dans cette section, nous allons explorer l'une des fonctionnalités puissantes d'Angular : Pipes. Les Pipes Angular fournissent un moyen pratique et efficace de transformer et de formater les données pour les afficher dans vos applications Angular. En appliquant divers pipes intégrés ou personnalisés, vous pouvez modifier les données à la volée, effectuer des opérations de filtrage, de tri et de formatage, ce qui améliore l'expérience utilisateur.",
+            "Aperçu des Pipes Angular :",
+            "Dans Angular, les pipes agissent comme des filtres qui prennent des données brutes en entrée et produisent des données transformées en sortie. Ils peuvent être utilisés dans les modèles pour modifier l'apparence, le formatage ou le comportement des données sans modifier les valeurs sous-jacentes. Les pipes sont conçus pour être simples et réutilisables, favorisant la maintenabilité du code et réduisant les répétitions."
+        ]
+    },
+    "table" : {
+        "en" : 
+        [
+            {
+                "title": "Date Formatting",
+                "code": "{{ currentDate | date:'dd/MM/yyyy' }}",
+                "description": "This pipe allows you to format dates according to various patterns, such as 'dd/MM/yyyy', 'MMM d, y', or 'yyyy-MM-dd'. It provides flexibility in displaying dates in a desired format."
+              },
+              {
+                "title": "Currency Conversion",
+                "code": "{{ price | currency:'EUR':'symbol':'1.2-2' }}",
+                "description": "This pipe enables you to format numeric values as currencies, specifying the currency code, symbol placement, and decimal precision. For example, 'EUR' would format 1234.56 as '€1,234.56'."
+              },
+              {
+                "title": "Uppercase/Lowercase",
+                "code": "{{ text | uppercase }} / {{ text | lowercase }}",
+                "description": "These pipes allow you to transform text to either uppercase or lowercase, respectively. They are useful when you need to standardize the case of text for consistent display or comparison purposes."
+              },
+              {
+                "title": "Decimal Precision",
+                "code": "{{ value | number:'1.2-3' }}",
+                "description": "This pipe lets you control the decimal precision of numeric values. You can specify the minimum and maximum number of digits before and after the decimal point, ensuring consistent formatting across your application."
+              },
+              {
+                "title": "Filtering",
+                "code": "{{ items | filter:searchTerm }}",
+                "description": "The filtering pipe allows you to perform basic filtering on an array of objects. It can be used to search and display specific items based on a given search term, providing a quick and efficient way to narrow down data."
+              },
+              {
+                "title": "Custom Pipes",
+                "code": "{{ value | customPipe:param1:param2 }}",
+                "description": "In addition to the built-in pipes, Angular allows you to create your own custom pipes. These pipes can encapsulate complex data transformations or calculations specific to your application, providing tailored functionality."
+              },
+              {
+                "title": "Slice Text",
+                "code": "{{ longText | slice:0:50 }}...",
+                "description": "This pipe allows you to truncate or slice text to a specified length. It is useful for displaying abbreviated or summarized content, especially when dealing with long paragraphs or descriptions."
+              },
+              {
+                "title": "Async Pipe",
+                "code": "{{ dataObservable | async }}",
+                "description": "The async pipe simplifies the handling of asynchronous data streams, particularly when working with Observables. It automatically subscribes to the data source and handles the data flow, making it easier to display and manage dynamic content."
+              },
+              {
+                "title": "JSON Pipe",
+                "code": "{{ dataObject | json }}",
+                "description": "The JSON pipe converts JavaScript objects into a JSON string representation. It is commonly used for debugging or displaying structured data in a readable format, such as when working with API responses."
+              },
+              {
+                "title": "Titlecase Pipe",
+                "code": "{{ text | titlecase }}",
+                "description": "This pipe converts text to title case, capitalizing the first letter of each word. It is useful for ensuring consistent and visually appealing capitalization in titles, headings, or any text requiring title case formatting."
+              },
+              {
+                "title": "Percent Pipe",
+                "code": "{{ value | percent }}",
+                "description": "The percent pipe formats numeric values as percentages. It multiplies the input value by 100 and appends the '%' symbol. It is commonly used for displaying percentages in charts, progress bars, or other UI components."
+              },
+              {
+                "title": "Default Value Pipe",
+                "code": "{{ value | default:'N/A' }}",
+                "description": "This pipe allows you to set a default value for null or undefined values. It is useful for handling missing data scenarios and ensuring a consistent display of content in your application."
+              },
+              {
+                "title": "Sorting",
+                "code": "{{ items | orderBy:'propertyName' }}",
+                "description": "The sorting pipe allows you to sort an array of items based on a specified property. It provides ascending or descending sorting options, making it easy to organize and present data in a desired order."
+              },
+              {
+                "title": "Filtering by Property",
+                "code": "{{ items | filterByProperty:'propertyName':'searchTerm' }}",
+                "description": "This pipe enables filtering an array of objects based on a specific property and a search term. It is useful when you want to display only the items that match a particular property value."
+              },
+              {
+                "title": "Limiting",
+                "code": "{{ text | limitTo:100 }}",
+                "description": "The limiting pipe truncates or limits the length of a string to a specified number of characters. It is commonly used when you need to display a portion of text with a maximum character limit."
+              },
+              {
+                "title": "Key-Value Iteration",
+                "code": "<div *ngFor=\"let entry of object | keyvalue\">{{ entry.key }}: {{ entry.value }}</div>",
+                "description": "This pipe iterates over an object and provides access to its key-value pairs. It is helpful when you need to display or manipulate object properties dynamically."
+              },
+              {
+                "title": "Relative Time",
+                "code": "{{ date | timeAgo }}",
+                "description": "The relative time pipe converts a given date into a human-readable relative time representation. For example, it can display '2 hours ago' or 'yesterday', providing users with contextually meaningful time references."
+              },
+              {
+                "title": "Image URL Sanitization",
+                "code": "<img [src]=\"imageUrl | safeUrl\">",
+                "description": "This pipe is used to safely sanitize and display image URLs in your Angular templates. It prevents potential security risks by sanitizing the URL before rendering it in the browser."
+              },
+              {
+                "title": "Array Join",
+                "code": "{{ array | join:' | ' }}",
+                "description": "The array join pipe converts an array into a string by concatenating its elements with a specified separator. It is handy when you want to display array values as a formatted string."
+              },
+              {
+                "title": "URL Encoding",
+                "code": "{{ url | encodeURI }}",
+                "description": "This pipe encodes a URL by replacing special characters with their URL-encoded equivalents. It ensures that URLs are properly formatted and can be safely used in HTTP requests or as query parameters."
+              },
+              {
+                "title": "Custom Date Formatting",
+                "code": "{{ date | customDateFormat:'dd/MM/yyyy' }}",
+                "description": "With a custom date formatting pipe, you can define your own date format patterns to format dates according to your specific requirements. It provides flexibility for displaying dates in a customized manner."
+              },
+              {
+                "title": "Boolean to Text",
+                "code": "{{ isEnabled | booleanToText:'Enabled':'Disabled' }}",
+                "description": "This pipe converts a boolean value to text based on specified true and false labels. It is useful when you want to display boolean values in a more readable and user-friendly format."
+              },
+              {
+                "title": "Truncating Text",
+                "code": "{{ longText | truncateText:100:'...' }}",
+                "description": "The truncating text pipe allows you to truncate long text and add ellipsis (...) at the end. It is commonly used when you need to limit the displayed text to a certain length."
+              },
+              {
+                "title": "Custom Transformation",
+                "code": "{{ value | customTransformPipe:param1:param2 }}",
+                "description": "In addition to the built-in pipes, Angular allows you to create your own custom transformation pipes. These pipes can perform complex data transformations specific to your application, giving you complete control over data manipulation."
+              }
+          
+
+        ],
+        "fr" : [
+            {
+                "title": "Formatage de date",
+                "code": "{{ currentDate | date:'dd/MM/yyyy' }}",
+                "description": "Ce pipe permet de formater les dates selon différents modèles, tels que 'dd/MM/yyyy', 'MMM d, y' ou 'yyyy-MM-dd'. Il offre une flexibilité pour afficher les dates dans le format souhaité."
+              },
+              {
+                "title": "Conversion de devise",
+                "code": "{{ price | currency:'EUR':'symbol':'1.2-2' }}",
+                "description": "Ce pipe permet de formater les valeurs numériques en tant que devises, en spécifiant le code de la devise, le placement du symbole et la précision décimale. Par exemple, 'EUR' formaterait 1234,56 en '1 234,56 €'."
+              },
+              {
+                "title": "Majuscules/Minuscules",
+                "code": "{{ text | uppercase }} / {{ text | lowercase }}",
+                "description": "Ces pipes permettent de transformer le texte en majuscules ou en minuscules, respectivement. Ils sont utiles lorsque vous souhaitez normaliser la casse du texte pour une présentation ou une comparaison cohérente."
+              },
+              {
+                "title": "Précision décimale",
+                "code": "{{ value | number:'1.2-3' }}",
+                "description": "Ce pipe vous permet de contrôler la précision décimale des valeurs numériques. Vous pouvez spécifier le nombre minimum et maximum de chiffres avant et après le point décimal, garantissant un formatage cohérent dans votre application."
+              },
+              {
+                "title": "Filtrage",
+                "code": "{{ items | filter:searchTerm }}",
+                "description": "Le pipe de filtrage permet d'effectuer un filtrage de base sur un tableau d'objets. Il peut être utilisé pour rechercher et afficher des éléments spécifiques en fonction d'un terme de recherche donné, offrant ainsi un moyen rapide et efficace de réduire les données affichées."
+              },
+              {
+                "title": "Pipes personnalisés",
+                "code": "{{ value | customPipe:param1:param2 }}",
+                "description": "En plus des pipes intégrés, Angular vous permet de créer vos propres pipes personnalisés. Ces pipes peuvent encapsuler des transformations de données complexes ou des calculs spécifiques à votre application, offrant une fonctionnalité sur mesure."
+              },
+              {
+                "title": "Tronquer le texte",
+                "code": "{{ longText | slice:0:50 }}...",
+                "description": "Ce pipe permet de tronquer ou découper un texte à une longueur spécifiée. Il est utile pour afficher un contenu abrégé ou résumé, notamment lorsqu'il s'agit de paragraphes ou de descriptions longues."
+              },
+              {
+                "title": "Pipe asynchrone",
+                "code": "{{ dataObservable | async }}",
+                "description": "Le pipe asynchrone simplifie la manipulation des flux de données asynchrones, notamment lors de l'utilisation d'Observables. Il s'abonne automatiquement à la source de données et gère le flux de données, facilitant l'affichage et la gestion du contenu dynamique."
+              },
+              {
+                "title": "Pipe JSON",
+                "code": "{{ dataObject | json }}",
+                "description": "Le pipe JSON convertit les objets JavaScript en une représentation de chaîne JSON. Il est couramment utilisé pour le débogage ou l'affichage de données structurées dans un format lisible, notamment lors de la manipulation de réponses API."
+                },
+                {
+                "title": "Pipe Titlecase",
+                "code": "{{ text | titlecase }}",
+                "description": "Ce pipe convertit du texte en majuscules initiales, en capitalisant la première lettre de chaque mot. Il est utile pour garantir une capitalisation cohérente et visuellement attrayante dans les titres, les en-têtes ou tout texte nécessitant un formatage en majuscules initiales."
+                },
+                {
+                "title": "Pipe pourcentage",
+                "code": "{{ value | percent }}",
+                "description": "Le pipe pourcentage formate les valeurs numériques en pourcentages. Il multiplie la valeur d'entrée par 100 et ajoute le symbole '%'. Il est couramment utilisé pour afficher des pourcentages dans des graphiques, des barres de progression ou d'autres composants d'interface utilisateur."
+                },
+                {
+                "title": "Pipe valeur par défaut",
+                "code": "{{ value | default:'N/A' }}",
+                "description": "Ce pipe vous permet de définir une valeur par défaut pour les valeurs nulles ou non définies. Il est utile pour gérer les scénarios de données manquantes et garantir un affichage cohérent du contenu dans votre application."
+                },
+                {
+                "title": "Tri",
+                "code": "{{ items | orderBy:'propertyName' }}",
+                "description": "Le pipe de tri vous permet de trier un tableau d'éléments en fonction d'une propriété spécifiée. Il offre des options de tri croissant ou décroissant, ce qui facilite l'organisation et la présentation des données dans l'ordre souhaité."
+                },
+                {
+                "title": "Filtrage par propriété",
+                "code": "{{ items | filterByProperty:'propertyName':'searchTerm' }}",
+                "description": "Ce pipe permet de filtrer un tableau d'objets en fonction d'une propriété spécifique et d'un terme de recherche. Il est utile lorsque vous souhaitez afficher uniquement les éléments correspondant à une valeur de propriété particulière."
+                },
+                {
+                "title": "Limitation",
+                "code": "{{ text | limitTo:100 }}",
+                "description": "Le pipe de limitation tronque ou limite la longueur d'une chaîne à un nombre spécifié de caractères. Il est couramment utilisé lorsque vous devez afficher une partie de texte avec une limite maximale de caractères."
+                },
+                {
+                "title": "Itération clé-valeur",
+                "code": "<div *ngFor='let entry of object | keyvalue'>{{ entry.key }}: {{ entry.value }}</div>",
+                "description": "Ce pipe itère sur un objet et permet d'accéder à ses paires clé-valeur. Il est utile lorsque vous avez besoin d'afficher ou de manipuler dynamiquement les propriétés d'un objet."
+                },
+                {
+                "title": "Temps relatif",
+                "code": "{{ date | timeAgo }}",
+                "description": "Le pipe de temps relatif convertit une date donnée en une représentation de temps relatif, telle que 'il y a 5 minutes'. Il est couramment utilisé pour afficher des horodatages dans un format facilement compréhensible."
+                },
+                {
+                    "title": "Sanitisation d'URL d'image",
+                    "code": "<img [src]='imageUrl | safeUrl'>",
+                    "description": "Ce pipe est utilisé pour sécuriser et afficher les URL d'images dans vos templates Angular. Il prévient les risques potentiels de sécurité en nettoyant l'URL avant de l'afficher dans le navigateur."
+                    },
+                    {
+                    "title": "Jointure de tableau",
+                    "code": "{{ array | join:' | ' }}",
+                    "description": "Le pipe de jointure de tableau convertit un tableau en une chaîne en concaténant ses éléments avec un séparateur spécifié. Il est pratique lorsque vous souhaitez afficher les valeurs du tableau sous forme de chaîne formatée."
+                    },
+                    {
+                    "title": "Encodage d'URL",
+                    "code": "{{ url | encodeURI }}",
+                    "description": "Ce pipe encode une URL en remplaçant les caractères spéciaux par leurs équivalents encodés pour les URL. Cela garantit que les URLs sont correctement formatées et peuvent être utilisées en toute sécurité dans les requêtes HTTP ou comme paramètres de requête."
+                    },
+                    {
+                    "title": "Formatage de date personnalisé",
+                    "code": "{{ date | customDateFormat:'dd/MM/yyyy' }}",
+                    "description": "Avec un pipe de formatage de date personnalisé, vous pouvez définir vos propres modèles de formatage de date pour formater les dates selon vos besoins spécifiques. Cela offre une flexibilité pour l'affichage des dates de manière personnalisée."
+                    },
+                    {
+                    "title": "Booléen vers texte",
+                    "code": "{{ isEnabled | booleanToText:'Activé':'Désactivé' }}",
+                    "description": "Ce pipe convertit une valeur booléenne en texte en fonction des libellés spécifiés pour vrai et faux. Il est utile lorsque vous souhaitez afficher les valeurs booléennes dans un format plus lisible et convivial pour l'utilisateur."
+                    },
+                    {
+                    "title": "Tronquer du texte",
+                    "code": "{{ longText | truncateText:100:'...' }}",
+                    "description": "Le pipe de troncature de texte vous permet de tronquer un texte long et d'ajouter des points de suspension (...) à la fin. Il est couramment utilisé lorsque vous devez limiter la longueur du texte affiché à une certaine valeur."
+                    },
+                    {
+                    "title": "Transformation personnalisée",
+                    "code": "{{ value | customTransformPipe:param1:param2 }}",
+                    "description": "En plus des pipes intégrés, Angular vous permet de créer vos propres pipes de transformation personnalisés. Ces pipes peuvent effectuer des transformations de données complexes spécifiques à votre application, vous offrant un contrôle total sur la manipulation des données."
+                    }
+
+        ]
+        
+    }
+}

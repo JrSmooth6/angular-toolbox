@@ -1,0 +1,211 @@
+{
+    "title":
+        {
+            "fr": "Fonctions TypeScript utiles pour Angular",
+            "en": "Useful TypeScript Functions for Angular"
+        },
+    "texte":{
+        "fr": [        
+        "Dans ce guide, nous allons explorer quelques fonctions TypeScript utiles pour le développement avec Angular.",
+         "Ces fonctions vous aideront à améliorer votre productivité et à rendre votre code plus efficace et plus maintenable.",
+         " Plongeons-y !"
+        ],
+        "en": [
+            "In this guide, we will explore some useful TypeScript functions for development with Angular.",
+            "These functions will help you improve your productivity and make your code more efficient and maintainable.",
+            " Let's dive in!"
+        ]
+    },
+    "table": {
+        "fr": [
+          {
+            "title": "Générer un nombre aléatoire",
+            "code": "function genererNombreAleatoire(min: number, max: number): number {\n  return Math.floor(Math.random() * (max - min + 1)) + min;\n}",
+            "description": "Cette fonction génère un nombre aléatoire dans une plage donnée."
+          },
+          {
+            "title": "Calculer la somme d'un tableau de nombres",
+            "code": "function calculerSomme(nombres: number[]): number {\n  return nombres.reduce((a, b) => a + b, 0);\n}",
+            "description": "Cette fonction prend un tableau de nombres en entrée et retourne la somme de tous les éléments."
+          },
+          {
+            "title": "Vérifier si un nombre est pair",
+            "code": "function estNombrePair(nombre: number): boolean {\n  return nombre % 2 === 0;\n}",
+            "description": "Cette fonction vérifie si un nombre donné est pair."
+          },
+          {
+            "title": "Vérifier si une chaîne de caractères est vide",
+            "code": "function estChaineVide(chaine: string): boolean {\n  return chaine.length === 0;\n}",
+            "description": "Cette fonction vérifie si une chaîne de caractères donnée est vide."
+          },
+          {
+            "title": "Calculer la factorielle d'un nombre",
+            "code": "function calculerFactorielle(nombre: number): number {\n  if (nombre === 0 || nombre === 1) {\n    return 1;\n  }\n\n  return nombre * calculerFactorielle(nombre - 1);\n}",
+            "description": "Cette fonction calcule la factorielle d'un nombre donné."
+          },
+          {
+            "title": "Convertir une chaîne de caractères en majuscules",
+            "code": "function convertirEnMajuscules(chaine: string): string {\n  return chaine.toUpperCase();\n}",
+            "description": "Cette fonction convertit une chaîne de caractères en majuscules."
+          },
+          {
+            "title": "Inverser une chaîne de caractères",
+            "code": "function inverserChaine(chaine: string): string {\n  return chaine.split('').reverse().join('');\n}",
+            "description": "Cette fonction inverse une chaîne de caractères donnée."
+          },
+          {
+            "title": "Vérifier si un tableau contient une valeur donnée",
+            "code": "function tableauContientValeur(tableau: any[], valeur: any): boolean {\n  return tableau.includes(valeur);\n}",
+            "description": "Cette fonction vérifie si un tableau donné contient une valeur spécifiée."
+          },
+          {
+            "title": "Vérifier si un objet est vide",
+            "code": "function estObjetVide(objet: object): boolean {\n  return Object.keys(objet).length === 0;\n}",
+            "description": "Cette fonction vérifie si un objet donné est vide."
+          },
+          {
+            "title": "Trouver le plus grand nombre dans un tableau",
+            "code": "function trouverPlusGrandNombre(tableau: number[]): number {\n  return Math.max(...tableau);\n}",
+            "description": "Cette fonction trouve le plus grand nombre dans un tableau de nombres donné."
+          },
+          {
+            "title": "Calculer la moyenne des nombres dans un tableau",
+            "code": "function calculerMoyenne(tableau: number[]): number {\n  const somme = tableau.reduce((a, b) => a + b, 0);\n  return somme / tableau.length;\n}",
+            "description": "Cette fonction calcule la moyenne des nombres dans un tableau donné."
+          },
+          {
+            "title": "Vérifier si un mot est un anagramme d'un autre mot",
+            "code": "function estAnagramme(mot1: string, mot2: string): boolean {\n  const mot1Sorted = mot1.toLowerCase().split('').sort().join('');\n  const mot2Sorted = mot2.toLowerCase().split('').sort().join('');\n  return mot1Sorted === mot2Sorted;\n}",
+            "description": "Cette fonction vérifie si un mot est un anagramme d'un autre mot donné."
+          },
+          {
+            "title": "Filtrer un tableau de nombres pour n'inclure que les nombres pairs",
+            "code": "function filtrerNombresPairs(tableau: number[]): number[] {\n  return tableau.filter(nombre => nombre % 2 === 0);\n}",
+            "description": "Cette fonction filtre un tableau de nombres pour n'inclure que les nombres pairs."
+          },
+          {
+            "title": "Regrouper les objets dans un tableau par une clé donnée",
+            "code": "function regrouperParCle(tableau: any[], cle: string): any {\n  return tableau.reduce((acc, obj) => {\n    const valeur = obj[cle];\n    acc[valeur] = acc[valeur] || [];\n    acc[valeur].push(obj);\n    return acc;\n  }, {});\n}",
+            "description": "Cette fonction regroupe les objets dans un tableau en utilisant une clé donnée comme critère de regroupement."
+          },
+          {
+            "title": "Vérifier si une année est bissextile",
+            "code": "function estAnneeBissextile(annee: number): boolean {\n  return (annee % 4 === 0 && annee % 100 !== 0) || annee % 400 === 0;\n}",
+            "description": "Cette fonction vérifie si une année donnée est bissextile."
+          },
+          {
+            "title": "Convertir une durée en millisecondes",
+            "code": "function convertirDureeEnMillisecondes(jours: number, heures: number, minutes: number, secondes: number): number {\n  const totalMillisecondes = ((jours * 24 + heures) * 60 + minutes) * 60 + secondes;\n  return totalMillisecondes * 1000;\n}",
+            "description": "Cette fonction convertit une durée donnée en jours, heures, minutes et secondes en millisecondes."
+          },
+          {
+            "title": "Calculer l'âge à partir de la date de naissance",
+            "code": "function calculerAge(dateNaissance: Date): number {\n  const difference = Date.now() - dateNaissance.getTime();\n  const ageDate = new Date(difference);\n  return Math.abs(ageDate.getUTCFullYear() - 1970);\n}",
+            "description": "Cette fonction calcule l'âge à partir d'une date de naissance donnée."
+          },
+          {
+            "title": "Calculer le nombre de jours écoulés entre deux dates",
+            "code": "function calculerNombreJoursEcoules(dateDebut: Date, dateFin: Date): number {\n  const difference = Math.abs(dateFin.getTime() - dateDebut.getTime());\n  const jours = Math.ceil(difference / (1000 * 60 * 60 * 24));\n  return jours;\n}",
+            "description": "Cette fonction calcule le nombre de jours écoulés entre deux dates données."
+          },
+          {
+            "title": "Vérifier si une chaîne de caractères est un numéro de téléphone valide",
+            "code": "function estNumeroTelephoneValide(numero: string): boolean {\n  const regex = /^\\+?[1-9]\\d{1,14}$/;\n  return regex.test(numero);\n}",
+            "description": "Cette fonction vérifie si une chaîne de caractères donnée correspond à un numéro de téléphone valide."
+          }
+        ],
+        "en": [
+            {
+              "title": "Generate a random number",
+              "code": "function generateRandomNumber(min: number, max: number): number {\n  return Math.floor(Math.random() * (max - min + 1)) + min;\n}",
+              "description": "This function generates a random number within a given range."
+            },
+            {
+              "title": "Calculate the sum of an array of numbers",
+              "code": "function calculateSum(numbers: number[]): number {\n  return numbers.reduce((a, b) => a + b, 0);\n}",
+              "description": "This function takes an array of numbers as input and returns the sum of all elements."
+            },
+            {
+              "title": "Check if a number is even",
+              "code": "function isNumberEven(number: number): boolean {\n  return number % 2 === 0;\n}",
+              "description": "This function checks if a given number is even."
+            },
+            {
+              "title": "Check if a string is empty",
+              "code": "function isStringEmpty(string: string): boolean {\n  return string.length === 0;\n}",
+              "description": "This function checks if a given string is empty."
+            },
+            {
+              "title": "Calculate the factorial of a number",
+              "code": "function calculateFactorial(number: number): number {\n  if (number === 0 || number === 1) {\n    return 1;\n  }\n\n  return number * calculateFactorial(number - 1);\n}",
+              "description": "This function calculates the factorial of a given number."
+            },
+            {
+              "title": "Convert a string to uppercase",
+              "code": "function convertToUppercase(string: string): string {\n  return string.toUpperCase();\n}",
+              "description": "This function converts a string to uppercase."
+            },
+            {
+              "title": "Reverse a string",
+              "code": "function reverseString(string: string): string {\n  return string.split('').reverse().join('');\n}",
+              "description": "This function reverses a given string."
+            },
+            {
+              "title": "Check if an array contains a given value",
+              "code": "function arrayContainsValue(array: any[], value: any): boolean {\n  return array.includes(value);\n}",
+              "description": "This function checks if a given array contains a specified value."
+            },
+            {
+              "title": "Check if an object is empty",
+              "code": "function isObjectEmpty(object: object): boolean {\n  return Object.keys(object).length === 0;\n}",
+              "description": "This function checks if a given object is empty."
+            },
+            {
+              "title": "Find the largest number in an array",
+              "code": "function findLargestNumber(array: number[]): number {\n  return Math.max(...array);\n}",
+              "description": "This function finds the largest number in a given array of numbers."
+            },
+            {
+              "title": "Calculate the average of numbers in an array",
+              "code": "function calculateAverage(array: number[]): number {\n  const sum = array.reduce((a, b) => a + b, 0);\n  return sum / array.length;\n}",
+              "description": "This function calculates the average of numbers in a given array."
+            },
+            {
+                "title": "Check if a word is an anagram of another word",
+                "code": "function isAnagram(word1: string, word2: string): boolean {\n const sortedWord1 = word1.toLowerCase().split('').sort().join('');\n const sortedWord2 = word2.toLowerCase().split('').sort().join('');\n return sortedWord1 === sortedWord2;\n}",
+                "description": "This function checks if a word is an anagram of another given word."
+                },
+                {
+                "title": "Filter an array of numbers to include only even numbers",
+                "code": "function filterEvenNumbers(array: number[]): number[] {\n return array.filter(number => number % 2 === 0);\n}",
+                "description": "This function filters an array of numbers to include only even numbers."
+                },
+                {
+                "title": "Group objects in an array by a given key",
+                "code": "function groupByKey(array: any[], key: string): any {\n return array.reduce((acc, obj) => {\n const value = obj[key];\n acc[value] = acc[value] || [];\n acc[value].push(obj);\n return acc;\n }, {});\n}",
+                "description": "This function groups objects in an array using a given key as the grouping criterion."
+                },
+                {
+                "title": "Check if a year is a leap year",
+                "code": "function isLeapYear(year: number): boolean {\n return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;\n}",
+                "description": "This function checks if a given year is a leap year."
+                },
+                {
+                "title": "Convert a duration to milliseconds",
+                "code": "function convertDurationToMilliseconds(days: number, hours: number, minutes: number, seconds: number): number {\n const totalMilliseconds = ((days * 24 + hours) * 60 + minutes) * 60 + seconds;\n return totalMilliseconds * 1000;\n}",
+                "description": "This function converts a given duration in days, hours, minutes, and seconds to milliseconds."
+                },
+                {
+                "title": "Calculate age from date of birth",
+                "code": "function calculateAge(dateOfBirth: Date): number {\n const difference = Date.now() - dateOfBirth.getTime();\n const ageDate = new Date(difference);\n return Math.abs(ageDate.getUTCFullYear() - 1970);\n}",
+                "description": "This function calculates the age from a given date of birth."
+                },
+                {
+                "title": "Calculate the number of days elapsed between two dates",
+                "code": "function calculateDaysElapsed(startDate: Date, endDate: Date): number {\n const difference = Math.abs(endDate.getTime() - startDate.getTime());\n const days = Math.ceil(difference / (1000 * 60 * 60 * 24));\n return days;\n}",
+                "description": "This function calculates the number of days elapsed between two given dates."
+                }
+
+        ]
+    }
+}

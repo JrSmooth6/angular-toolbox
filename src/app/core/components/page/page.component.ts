@@ -4,6 +4,7 @@ import { TranslationPipe } from '../../pipe/translation.pipe';
 import { HttpClient } from '@angular/common/http';
 import { LocalizedTablePipe } from '../../pipe/localized-table.service';
 import { ComponentCommunicationService } from '../../services/component-communication-service.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-page',
@@ -22,7 +23,8 @@ export class PageComponent implements OnInit {
   constructor(
     private cliService: CliServiceService,
     private http: HttpClient,
-    private componentCommunicationService: ComponentCommunicationService
+    private componentCommunicationService: ComponentCommunicationService,
+    private activatedRoute : ActivatedRoute
   ) {
     this.componentCommunicationService.componentInit$.subscribe(() => {
       this.onInitFromHeader();
@@ -36,10 +38,10 @@ export class PageComponent implements OnInit {
 }
 
   initializeData(): void {
-    this.http.get('../../assets/textes/cli.json').subscribe(data => {
+    let sujet = this.activatedRoute.snapshot.url[0].path;
+    this.http.get(`../../assets/textes/${sujet}.json`).subscribe(data => {
       this.jsonData = data;
       this.tableau = this.jsonData.table[this.lang || 'fr'];
-      console.log(this.tableau);
     });
   }
 

@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import {HttpClientModule} from '@angular/common/http';
 import { ComponentCommunicationService } from './core/services/component-communication-service.service';
+import { FooterComponent } from './core/components/footer/footer.component';
 
 @NgModule({
   declarations: [

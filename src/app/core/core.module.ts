@@ -10,6 +10,7 @@ import { TranslationPipe } from './pipe/translation.pipe';
 import { AppModule } from '../app.module';
 import { LocalizedTablePipe } from './pipe/localized-table.service';
 import { ComponentCommunicationService } from './services/component-communication-service.service';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { ComponentCommunicationService } from './services/component-communicatio
     PageComponent,
     TranslationPipe,
     LocalizedTablePipe,
+    FooterComponent,
   ],
   imports: [
     CommonModule,
@@ -31,6 +33,7 @@ import { ComponentCommunicationService } from './services/component-communicatio
   ],
   exports : [
     HeaderComponent,
+    FooterComponent
   ]
 })
 export class CoreModule { }

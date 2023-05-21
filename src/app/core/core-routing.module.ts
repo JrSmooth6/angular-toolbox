@@ -6,7 +6,10 @@ import { PageComponent } from './components/page/page.component';
 
 const routes: Routes = [
   {path : '', component : ListComponent},
-  {path : 'cli', component : PageComponent}
+  {path : 'cli', component : PageComponent},
+  {path : 'functions', component : PageComponent},
+  {path : 'pipes', component : PageComponent},
+
 ];
 
 @NgModule({
