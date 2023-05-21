@@ -2,9 +2,9 @@
 
 
   <div class="search-container">
-    <input type="text" class="search-input" placeholder="Search...">
+    <input type="text" class="search-input" placeholder="Search..." [(ngModel)]="filtre" (ngModelChange)="trierTableau()" (keyup.enter)="scrollToTab()">
     <button class="search-button">
-      <i class="fa fa-search"></i>
+      <i class="fa fa-search" (click)="scrollToTab()"></i>
     </button>
   </div>
   <div class="text">

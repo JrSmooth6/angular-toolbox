@@ -13,10 +13,12 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class PageComponent implements OnInit {
   tableau!: { title: string, code: string, description: string }[];
+  tableauOriginal!: { title: string, code: string, description: string }[];
   title!: { title: string, texte: string[] }[];
   jsonData!: any;
   lang = localStorage.getItem('lang');
   isSectionVisible = false;
+  filtre="";
 
   @ViewChild('tab') tabElement!: ElementRef;
 
@@ -34,7 +36,7 @@ export class PageComponent implements OnInit {
   ngOnInit(): void {
     this.lang = localStorage.getItem('lang');
     this.initializeData();
-    
+
 }
 
   initializeData(): void {
@@ -42,6 +44,8 @@ export class PageComponent implements OnInit {
     this.http.get(`../../assets/textes/${sujet}.json`).subscribe(data => {
       this.jsonData = data;
       this.tableau = this.jsonData.table[this.lang || 'fr'];
+      this.tableauOriginal = this.jsonData.table[this.lang || 'fr'];
+
     });
   }
 
@@ -54,4 +58,11 @@ export class PageComponent implements OnInit {
     this.lang = localStorage.getItem('lang');
     this.initializeData();
   }
+  trierTableau() {
+    this.tableau = this.tableauOriginal.filter(item => {
+      // Vérifie si le titre de l'élément contient la valeur de filtre
+      return item.title.toLowerCase().includes(this.filtre.toLowerCase());
+    });
+  }
+
 }

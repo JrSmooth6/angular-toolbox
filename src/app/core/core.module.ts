@@ -11,6 +11,7 @@ import { AppModule } from '../app.module';
 import { LocalizedTablePipe } from './pipe/localized-table.service';
 import { ComponentCommunicationService } from './services/component-communication-service.service';
 import { FooterComponent } from './components/footer/footer.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -26,10 +27,12 @@ import { FooterComponent } from './components/footer/footer.component';
   imports: [
     CommonModule,
     CoreRoutingModule,
-    
+    FormsModule
+
+
   ],
   providers : [
-    
+
   ],
   exports : [
     HeaderComponent,
