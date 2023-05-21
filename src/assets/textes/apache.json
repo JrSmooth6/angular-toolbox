@@ -1,0 +1,104 @@
+{
+  "title" :
+      {
+        "fr" : "Déploiement d'un projet Angular sur un serveur Apache",
+        "en" : "Deploying an Angular project on an Apache Server"
+      },
+      "texte" :
+      {
+        "fr" : [
+          "Dans ce guide, nous allons explorer le processus de déploiement d'un projet Angular sur un serveur Apache.",
+          "Apache est un serveur web largement utilisé qui peut héberger des applications Angular, leur permettant ainsi d'être accessibles aux utilisateurs via internet.",
+          "Nous aborderons les étapes nécessaires pour configurer Apache, construire le projet Angular et le déployer sur le serveur.",
+          "En suivant ces instructions, vous pourrez publier avec succès votre application Angular et la rendre accessible aux utilisateurs."
+        ],
+        "en" : [
+          "In this guide, we will explore the process of deploying an Angular project on an Apache server.",
+          " Apache is a widely used web server that can host Angular applications, allowing them to be accessible to users over the internet.",
+          "We will cover the necessary steps to configure Apache, build the Angular project, and deploy it on the server.",
+          " By following these instructions, you will be able to successfully publish your Angular application and make it available for users to access."
+        ]
+      },
+      "table" :{
+        "en" : [
+          {
+            "title": "Install Apache Web Server",
+            "code": "sudo apt-get update\nsudo apt-get install apache2",
+            "description": "The above commands are used to install the Apache web server on a Linux system. The first command updates the package lists, and the second command installs Apache 2. Once installed, Apache will be ready to host your Angular project."
+            }
+            ,
+            {
+            "title": "Configure Apache Virtual Host",
+            "code": "sudo nano /etc/apache2/sites-available/your-domain.conf\n\n<VirtualHost *:80>\n ServerName your-domain.com\n DocumentRoot /var/www/your-project\n\n <Directory /var/www/your-project>\n Options Indexes FollowSymLinks\n AllowOverride All\n Require all granted\n </Directory>\n\n ErrorLog ${APACHE_LOG_DIR}/error.log\n CustomLog ${APACHE_LOG_DIR}/access.log combined\n</VirtualHost>",
+            "description": "The above code snippet shows the configuration of an Apache virtual host for your Angular project. Replace 'your-domain' with your actual domain name and '/var/www/your-project' with the path to your Angular project's directory. This configuration sets up the necessary settings for serving your Angular application correctly."
+            }
+            ,
+            {
+            "title": "Enable Apache Rewrite Module",
+            "code": "sudo a2enmod rewrite\nsudo systemctl restart apache2",
+            "description": "To enable URL rewriting for Angular routing, the above commands are used. The first command enables the Apache rewrite module, and the second command restarts Apache to apply the changes. URL rewriting is necessary for proper navigation within your Angular application."
+            }
+            ,
+            {
+            "title": "Build Angular Project",
+            "code": "ng build --prod",
+            "description": "To build your Angular project for production, use the above command. This command compiles your Angular application and creates optimized files in the 'dist' directory. These files can be deployed to your Apache server for hosting."
+            }
+            ,
+            {
+            "title": "Deploy Angular Project to Apache",
+            "code": "sudo cp -R /path/to/dist /var/www/your-project\nsudo chown -R www-data:www-data /var/www/your-project",
+            "description": "The above commands are used to deploy your Angular project to the Apache server. Replace '/path/to/dist' with the path to your 'dist' directory generated from the Angular build command, and '/var/www/your-project' with the path to your project's directory in Apache's DocumentRoot. These commands copy the compiled project files and ensure the correct permissions for Apache to serve the application."
+            }
+            ,
+            {
+            "title": "Restart Apache Server",
+            "code": "sudo systemctl restart apache2",
+            "description": "After deploying your Angular project, use the above command to restart the Apache server. This step ensures that Apache loads the updated configuration and serves your Angular application to users visiting your domain."
+            },
+            {
+              "title": "Contents of .htaccess File",
+              "code": "sudo nano /var/www/your-project/.htaccess\n\n# URL Redirection\nRewriteEngine On\nRewriteBase /\n\n# Redirect all requests to index.html\nRewriteCond %{REQUEST_FILENAME} !-f\nRewriteCond %{REQUEST_FILENAME} !-d\nRewriteRule ^(.*)$ index.html [L]",
+              "description": "The above code represents an example of the contents for the .htaccess file. This file is used by Apache to specify directory-level configuration directives. In this example, we are using the .htaccess file to perform URL redirection to support routing in your Angular application. The first part of the code enables the rewrite engine and sets the rewrite base. The second part redirects all requests that do not match an existing file to index.html, allowing the Angular application to handle navigation and rendering correctly. You can add additional custom directives based on your project's requirements."
+              }
+        ],
+        "fr" : [
+
+            {
+            "title": "Installer le serveur web Apache",
+            "code": "sudo apt-get update\nsudo apt-get install apache2",
+            "description": "Les commandes ci-dessus sont utilisées pour installer le serveur web Apache sur un système Linux. La première commande met à jour les listes de paquets, et la deuxième commande installe Apache 2. Une fois installé, Apache sera prêt à héberger votre projet Angular."
+            },
+            {
+            "title": "Configurer l'hôte virtuel Apache",
+            "code": "sudo nano /etc/apache2/sites-available/votre-domaine.conf\n\n<VirtualHost *:80>\n ServerName votre-domaine.com\n DocumentRoot /var/www/votre-projet\n\n <Directory /var/www/votre-projet>\n Options Indexes FollowSymLinks\n AllowOverride All\n Require all granted\n </Directory>\n\n ErrorLog ${APACHE_LOG_DIR}/error.log\n CustomLog ${APACHE_LOG_DIR}/access.log combined\n</VirtualHost>",
+            "description": "Le code ci-dessus montre la configuration d'un hôte virtuel Apache pour votre projet Angular. Remplacez 'votre-domaine' par votre nom de domaine réel et '/var/www/votre-projet' par le chemin vers le répertoire de votre projet Angular. Cette configuration met en place les paramètres nécessaires pour servir correctement votre application Angular."
+            },
+            {
+            "title": "Activer le module de réécriture Apache",
+            "code": "sudo a2enmod rewrite\nsudo systemctl restart apache2",
+            "description": "Pour activer la réécriture d'URL pour le routage Angular, les commandes ci-dessus sont utilisées. La première commande active le module de réécriture Apache, et la deuxième commande redémarre Apache pour appliquer les changements. La réécriture d'URL est nécessaire pour une navigation appropriée au sein de votre application Angular."
+            },
+            {
+            "title": "Compiler le projet Angular",
+            "code": "ng build --prod",
+            "description": "Pour compiler votre projet Angular en mode production, utilisez la commande ci-dessus. Cette commande compile votre application Angular et crée des fichiers optimisés dans le répertoire 'dist'. Ces fichiers peuvent être déployés sur votre serveur Apache pour l'hébergement."
+            },
+            {
+            "title": "Déployer le projet Angular sur Apache",
+            "code": "sudo cp -R /chemin/vers/dist /var/www/votre-projet\nsudo chown -R www-data:www-data /var/www/votre-projet",
+            "description": "Les commandes ci-dessus sont utilisées pour déployer votre projet Angular sur le serveur Apache. Remplacez '/chemin/vers/dist' par le chemin vers le répertoire 'dist' généré par la commande de construction Angular, et '/var/www/votre-projet' par le chemin vers le répertoire de votre projet dans le DocumentRoot d'Apache. Ces commandes copient les fichiers du projet compilé et garantissent les permissions correctes pour qu'Apache puisse servir l'application."
+            },
+            {
+            "title": "Redémarrer le serveur Apache",
+            "code": "sudo systemctl restart apache2",
+            "description": "Après avoir déployé votre projet Angular, utilisez la commande ci-dessus pour redémarrer le serveur Apache."
+            },
+            {
+              "title": "Contenu du fichier .htaccess",
+              "code": "sudo nano /var/www/votre-projet/.htaccess\n\n# Redirection des URL\nRewriteEngine On\nRewriteBase /\n\n# Rediriger toutes les requêtes vers l'index.html\nRewriteCond %{REQUEST_FILENAME} !-f\nRewriteCond %{REQUEST_FILENAME} !-d\nRewriteRule ^(.*)$ index.html [L]",
+              "description": "Le code ci-dessus représente un exemple de contenu pour le fichier .htaccess. Ce fichier est utilisé par Apache pour spécifier des directives de configuration au niveau du répertoire. Dans cet exemple, nous utilisons le fichier .htaccess pour effectuer une redirection d'URL afin de prendre en charge les routes de votre application Angular. La première partie du code active le moteur de réécriture et définit la base de la réécriture. La deuxième partie redirige toutes les requêtes qui ne correspondent pas à un fichier existant vers l'index.html, permettant ainsi à l'application Angular de gérer la navigation et l'affichage correctement. Vous pouvez ajouter d'autres directives personnalisées en fonction des besoins de votre projet."
+              }
+          ]
+      }
+}

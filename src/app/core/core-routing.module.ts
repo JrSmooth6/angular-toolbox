@@ -9,6 +9,7 @@ const routes: Routes = [
   {path : 'cli', component : PageComponent},
   {path : 'functions', component : PageComponent},
   {path : 'pipes', component : PageComponent},
+  {path : 'apache',component : PageComponent},
 
 ];
 
